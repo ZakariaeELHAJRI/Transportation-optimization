@@ -1,0 +1,13 @@
+<h1>Integrate Google Maps in Angular</h1>
+
+<!-- app.component.html -->
+<google-map height="80vh" width="100%" [center]="center" [zoom]="zoom">
+  <map-marker *ngFor="let marker of markers" [position]="{ lat: marker.lat, lng: marker.lng }" [options]="marker.options || {}">
+    <map-info-window>{{ marker.id }}</map-info-window>
+  </map-marker>
+</google-map>
+
+<button (click)="showShortestDirections()">Show Shortest Directions</button>
+
+
+
